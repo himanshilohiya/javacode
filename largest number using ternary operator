@@ -1,0 +1,18 @@
+// write a program that will take 2 values from user and use ternary operator to find the largest value among them.
+
+import java.util.*;
+class Test
+{
+public static void main(String args[])
+{
+   
+    int n1 = 5, n2 = 10, max;
+     
+    
+    max = (n1 > n2) ? n1 : n2;
+     
+  
+    System.out.println("Largest number between " + n1 +
+                  " and " + n2 + " is " + max + ". " );
+}
+}
