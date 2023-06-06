@@ -1,0 +1,70 @@
+class Product {
+
+    String name;
+
+    double price;
+
+    int quantity;
+
+    static int totalSold = 0;
+
+    public Product(String name, double price, int quantity) {
+
+        this.name = name;
+
+        this.price = price;
+
+        this.quantity = quantity;
+
+    }
+
+    void sell(int quantity) {
+
+        if (quantity <= this.quantity) {
+
+            this.quantity -= quantity;
+
+            totalSold += quantity;
+
+            System.out.println(quantity + " units of " + name + " sold.");
+
+        } else {
+
+            System.out.println("Insufficient quantity of " + name + " to sell.");
+
+        }
+
+    }
+
+    static int getTotalSold() {
+
+        return totalSold;
+
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Product product1 = new Product("Product 1", 10.99, 50);
+
+        Product product2 = new Product("Product 2", 5.99, 20);
+
+        Product product3 = new Product("Product 3", 7.99, 30);
+
+        product1.sell(20);
+
+        product2.sell(10);
+
+        product3.sell(40);
+
+        int totalSold = Product.getTotalSold();
+
+        System.out.println("Total quantity of products sold: " + totalSold);
+
+    }
+
+}
+
